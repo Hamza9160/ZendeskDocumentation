@@ -862,6 +862,34 @@ flowchart TD
         </tbody>
       </table>
 
+      <h3>Request Body by Request Type</h3>
+      <p>Which fields are required depends on <code style="font-family:'IBM Plex Mono',monospace;font-size:12px">requestType</code>. Use the matching shape below.</p>
+      <h4>1 · Request Free Samples <span style="font-weight:400;color:var(--muted)">— sampleId required, message optional</span></h4>
+      <div class="code-block">
+        <div class="code-label">JSON</div>
+        <pre>{
+  "requestType": 1,
+  "sampleId": "smp_001",
+  "message": "I want these samples by next week"
+}</pre>
+      </div>
+      <h4>2 · Schedule a Rep Visit <span style="font-weight:400;color:var(--muted)">— message required</span></h4>
+      <div class="code-block">
+        <div class="code-label">JSON</div>
+        <pre>{
+  "requestType": 2,
+  "message": "Please have a rep visit my clinic next week."
+}</pre>
+      </div>
+      <h4>3 · Custom Request <span style="font-weight:400;color:var(--muted)">— message required</span></h4>
+      <div class="code-block">
+        <div class="code-label">JSON</div>
+        <pre>{
+  "requestType": 3,
+  "message": "I have a question about dosing for a pediatric patient."
+}</pre>
+      </div>
+
       <h3>Response — 201 Created</h3>
       <div class="code-block">
         <div class="code-label">JSON</div>
